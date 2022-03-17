@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=auto, maximum-scale=1.0, user-scalable=yes"
+    />
+    <title>Vertical Timeline</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <style>
+      #timeline {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      #timeline div {
+        height: 231px;
+      }
+
+      #timeline div .date {
+        border-right: 1px rgba(179, 175, 175, 0.4) solid;
+        text-align: right;
+      }
+
+      #timeline div .date:before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background: #e5e5d1;
+        position: absolute;
+        left: 99.2%;
+        top: 88px;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+
+      #timeline div.active .date::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: #0078ff;
+        position: absolute;
+        left: 98.7%;
+        top: 98px;
+        border-radius: 100%;
+      }
+
+      #timeline div .date h2 {
+        margin: 72px 28px 0;
+        font-size: 45px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      #timeline div.active .date h2 {
+        font-size: 65px;
+        color: #0078ff;
+      }
+
+      #timeline div .text p {
+        margin: 85px 50px 0;
+        width: 50%;
+        display: none;
+      }
+
+      #timeline div.active .text p {
+        display: inherit;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="timeline" class="row">
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2></h2>
+          </div>
+
+          <div class="text col-7">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2>1700</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              volutpat tellus sit amet lorem aliquet, nec vestibulum diam
+              sodales. Nunc id dolor eget quam lacinia mattis viverra vel erat.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2>1800</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Donec ultrices sodales feugiat. Curabitur tempus mi leo, eu
+              consectetur dolor dapibus et. Duis sit amet tortor quis justo
+              efficitur imperdiet.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2>1900</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Vivamus dui nisl, auctor non velit eget, pulvinar porttitor neque.
+              Donec quam nisl, rutrum a pharetra ut, facilisis quis lacus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2>2000</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Aliquam fermentum vestibulum orci interdum auctor. Nunc sodales
+              risus ut elit sodales ultrices. Donec a porttitor metus, non
+              rhoncus eros.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2>2100</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Aenean eget dui tempor, rutrum ligula sit amet, vulputate magna.
+              Ut quis eros feugiat, ullamcorper odio et, pellentesque leo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2>2200</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Mauris cursus nulla ipsum, et dignissim nisl pellentesque et.
+              Nullam maximus, arcu vel suscipit tristique, diam eros elementum
+              mauris, at pulvinar lectus tellus congue dolor.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2>2300</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Duis gravida maximus eros, non congue mi tempus eu. Aenean
+              placerat lacus id tortor pretium, a blandit elit ullamcorper.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12 active">
+        <div class="row">
+          <div class="date col-5">
+            <h2>2400</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Pellentesque rutrum augue erat, id vehicula libero ultrices ut.
+              Sed molestie urna tortor, congue consectetur augue pellentesque
+              vitae.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2>2500</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Pellentesque libero elit, hendrerit sit amet lacinia eget,
+              fermentum vitae risus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2>2600</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Aenean aliquet venenatis orci id pharetra. Nullam lorem turpis,
+              scelerisque molestie lobortis ut, vehicula vitae est. Aliquam erat
+              volutpat. Praesent faucibus vehicula pretium.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2>2700</h2>
+          </div>
+
+          <div class="text col-7">
+            <p>
+              Sed ultrices odio ex, sed volutpat mauris volutpat ac. Donec
+              tincidunt felis magna, in ornare nisl auctor vitae. Curabitur
+              luctus sed erat ut venenatis.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timelineCont col-12">
+        <div class="row">
+          <div class="date col-5">
+            <h2></h2>
+          </div>
+
+          <div class="text col-7">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* ----------------------------------
+jQuery Timelinev 1.1.0
+tested with jQuery v2.2.4
+
+Copyright 2019, Created by Xavier Raspall Gonzalez
+Free under the MIT license.
+http://www.opensource.org/licenses/mit-license.php
+---------------------------------- */
+
+      jQuery.fn.timelinev = function (options) {
+        // plugin settings
+        settings = jQuery.extend(
+          {
+            timelineDiv: $(this),
+            containerDivs: ".timelineCont",
+            dateDiv: ".date",
+            textDiv: ".text",
+            dateHtml: "h2",
+            textHtml: "p",
+            dateActiveClass: ".active",
+            datesSpeed: "750",
+          },
+          options
+        );
+
+        console.log();
+
+        $(function () {
+          // setting variables
+          var divsCont = settings.timelineDiv.find(settings.containerDivs);
+          var datesCont = divsCont.find(
+            settings.dateDiv + " " + settings.dateHtml
+          );
+          var dates = parseFecha(datesCont);
+          var dateActive = dates.indexOf(
+            $(
+              settings.dateActiveClass +
+                " " +
+                settings.dateDiv +
+                " " +
+                settings.dateHtml
+            ).html()
+          );
+
+          var divHeight = divsCont.outerHeight();
+
+          //Show date active
+          if (dateActive > 1) {
+            for (i = 0; i < dateActive - 1; i++) {
+              $(divsCont[i]).css("margin-top", -divHeight);
+            }
+          }
+
+          //Bind click on date
+          $(settings.containerDivs)
+            .find(settings.dateDiv)
+            .click(function (event) {
+              event.preventDefault();
+              var dateSelected = $(this).find(settings.dateHtml);
+              var posDate = dates.indexOf(dateSelected.html());
+
+              if (posDate > dateActive && posDate !== dates.length) {
+                divsCont.removeClass("active");
+                dateSelected.parent().parent().parent().addClass("active");
+
+                if (dateActive + 1 != divsCont.length - 2) {
+                  decrementDate();
+                }
+
+                dateActive = posDate;
+              }
+
+              if (posDate < dateActive && posDate !== 0) {
+                divsCont.removeClass("active");
+                dateSelected.parent().parent().parent().addClass("active");
+
+                incrementDate();
+                dateActive = posDate;
+              }
+            });
+
+          //Bind scroll
+          settings.timelineDiv.bind(
+            "mousewheel DOMMouseScroll",
+            function (event) {
+              event.preventDefault();
+
+              if (
+                (event.originalEvent.wheelDelta > 0 ||
+                  event.originalEvent.detail < 0) &&
+                dateActive - 1 !== 0
+              ) {
+                divsCont.removeClass("active");
+                $(divsCont[dateActive - 1]).addClass("active");
+
+                incrementDate();
+                dateActive = dateActive - 1;
+              }
+
+              if (
+                (event.originalEvent.wheelDelta < 0 ||
+                  event.originalEvent.detail > 0) &&
+                dateActive + 1 !== dates.length - 1
+              ) {
+                divsCont.removeClass("active");
+                $(divsCont[dateActive + 1]).addClass("active");
+
+                if (dateActive + 1 != divsCont.length - 2) {
+                  decrementDate();
+                }
+
+                dateActive = dateActive + 1;
+              }
+            }
+          );
+
+          //Parse dates
+          function parseFecha(fechasHTML) {
+            var arrayDates = [];
+            fechasHTML.each(function () {
+              var singleDate = $(this).html();
+              arrayDates.push(singleDate);
+            });
+            return arrayDates;
+          }
+
+          //Increment
+          function incrementDate() {
+            $(divsCont[dateActive - 1]).animate(
+              { "margin-top": 0 },
+              { queue: true, duration: "settings.datesSpeed" }
+            );
+            $(divsCont[dateActive - 2]).animate(
+              { "margin-top": 0 },
+              { queue: true, duration: "settings.datesSpeed" }
+            );
+          }
+
+          //Decrement
+          function decrementDate() {
+            $(divsCont[dateActive - 1]).animate(
+              { "margin-top": "-" + divHeight },
+              { queue: true, duration: "settings.datesSpeed" }
+            );
+          }
+        });
+      };
+    </script>
+    <script>
+      $(function () {
+        $("#timeline").timelinev({
+          containerDivs: ".timelineCont",
+          dateDiv: ".date",
+          textDiv: ".text",
+          dateHtml: "h2",
+          textHtml: "p",
+          dateActiveClass: ".active",
+        });
+      });
+    </script>
+  </body>
+</html>
